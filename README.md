@@ -8,15 +8,6 @@ A lightweight, practical implementation demonstrating how to build a **Knowledge
 
 Traditional RAG relies on vector semantics, which can lose structural context. This project builds a **GraphRAG pipeline** that extracts entities and relationships from unstructured text, stores them in a Graph Database, and uses an LLM to generate highly contextual answers by traversing the graph.
 
-```mermaid
-graph TD
-    A[Unstructured Text] -->|Entity Extraction| B(LangChain Graph Transformer)
-    B -->|Cypher Queries| C[(Neo4j Graph Database)]
-    D[User Query] -->|Context Retrieval| E(LangChain GraphQA Chain)
-    C -->|Sub-graph Context| E
-    F[Groq LLM] -->|Reasoning & Synthesis| E
-    E --> G[Accurate Context-Aware Answer]
-```
 
 ---
 
